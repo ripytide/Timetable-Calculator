@@ -16,12 +16,13 @@
     <style type="text/css">
         body {
             padding-top: 5rem;
+            background-color: grey;
         }
     </style>
 </head>
 
     
-<body style="background-color:grey;">
+<body>
 
     
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -55,47 +56,78 @@
 
     <main role="main" class="container">
 
-        <div>
-            <h1 style="text-decoration: underline;">Timetable Calculator</h1>
-            <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <br><br><br><br><br><br>
+                    
+                    <h1 class="text-center">Select Lesson:</h1>
+
+                    <br>
+
+                    <div class="form-check">
+                        <input id="button1" name="buttons" value="1" type="radio" ></input>
+                        <label for="button1" class="form-check-label font-weight-bold">Subject 1</label>
+                        <br>
+                        <input id="button2" name="buttons" value="2" type="radio" ></input>
+                        <label for="button2" class="form-check-label font-weight-bold">Subject 2</label>
+                        <br>
+                        <input id="button3" name="buttons" value="3" type="radio" ></input>
+                        <label for="button3" class="form-check-label font-weight-bold">Subject 3</label>
+                        <br>
+                        <input id="button4" name="buttons" value="4" type="radio" ></input>
+                        <label for="button4" class="form-check-label font-weight-bold">Subject 4</label>
+                        <br>
+                        <input id="button5" name="buttons" value="5" type="radio" ></input>
+                        <label for="button5" class="form-check-label font-weight-bold">Subject 5</label>
+                        <br>
+                        <input id="button6" name="buttons" value="6" type="radio" ></input>
+                        <label for="button6" class="form-check-label font-weight-bold">Subject 6</label>
+                    </div>
+
+
+
+                </div>
+
+                <div class="col-md-8">
+                    <div>
+                        <h1 style="text-decoration: underline;">Timetable Calculator</h1>
+                        <br>
+                    </div>
+                    <b>Week 1</b>
+                    <table id="week1Table" class="table table-dark table-sm"></table>
+                    <b>Week 2</b>
+                    <table id="week2Table" class="table table-dark table-sm"></table>
+                </div>
+            </div>
         </div>
-        <b>Week 1</b>
-        <table id="week1Table" class="table table-dark"></table>
-        <b>Week 2</b>
-        <table id="week2Table" class="table table-dark table-sm"></table>
-        
+
         <div class="form-group ">
             <div class="row">
                 <div class="col">
                     <label for="lesson1" style="font-weight: bold;">Subject 1: </label>
-                    <input name="buttons" value="1" type="checkbox" ></input>
                     <input id="lesson1" name="lessons" class="form-control" style="background-color:fuchsia"></input>
                 </div>
                 <div class="col">
                     <label for="lesson2" style="font-weight: bold;">Subject 2: </label>
-                    <input name="buttons" value="2" type="checkbox" ></input>
             <input id="lesson2" name="lessons" class="form-control" style="background-color:olive"></input> 
                 </div>
                 <div class="col">
                     <label for="lesson3" style="font-weight: bold;">Subject 3: </label>
-                    <input name="buttons" value="3" type="checkbox" ></input>
                     <input id="lesson3" name="lessons" class="form-control" style="background-color:aqua"></input>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="lesson4" style="font-weight: bold;">Subject 4: </label>
-                    <input name="buttons" value="4" type="checkbox" ></input>
                     <input id="lesson4" name="lessons" class="form-control" style="background-color:silver"></input>
                 </div>
                 <div class="col">
                     <label for="lesson5" style="font-weight: bold;">Subject 5: </label>
-                    <input name="buttons" value="5" type="checkbox" ></input>
                     <input id="lesson5" name="lessons" class="form-control" style="background-color:maroon"></input>
                 </div>
                 <div class="col">
                     <label for="lesson6" style="font-weight: bold;">Subject 6: </label>
-                    <input name="buttons" value="6" type="checkbox" ></input>
                     <input id="lesson6" name="lessons" class="form-control" style="background-color:lime"></input>
                 </div>
 
@@ -196,7 +228,7 @@
 
                     let cellid = 'cell' + num + (t-1) + (i-1);
 
-                    let insideHtml = "<input size='1' class='form-control' id = '" + cellid + "' onclick='cellClicked(" + cellid + ")'> </input>";
+                    let insideHtml = "<input size='1' class='form-control' id = '" + cellid + "' onclick='cellClicked(" + cellid + ")' readonly> </input>";
                     if (t==0) {
                         newRow.insertCell(t).innerHTML = days[i - 1];
 
@@ -210,9 +242,6 @@
         makeTable('week1Table',0);
         makeTable('week2Table',1);
         
-
-
-        'use strict';
         let t1start = new Date(2019,8,4);//give the starts as the first day back and the ends as the last school day
         let t1end = new Date(2019,9,25);
         let t2start = new Date(2019,10,4);
@@ -226,7 +255,6 @@
         let t6start = new Date(2020,5,1);
         let t6end = new Date(2020,6,17);
         let dates = [t1start,t1end,t2start,t2end,t3start,t3end,t4start,t4end,t5start,t5end,t6start,t6end];
-
 
         let p1start = [9,0];//means 9:00 am
         let p1end = [10,0]
@@ -468,11 +496,6 @@
 
 
     </script>
-    
-    
-
-    
-    
     
 
     <!-- Bootstrap core JavaScript
