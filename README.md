@@ -1,2 +1,2 @@
 # Timetable-Calculator
-A website that calculates the number of lessons you have left
+A simple one-file website that calculates the number of lessons you have left given a timetable and term dates.
